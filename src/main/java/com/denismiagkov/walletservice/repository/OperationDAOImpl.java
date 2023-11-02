@@ -6,6 +6,7 @@ import com.denismiagkov.walletservice.domain.model.OperationType;
 import com.denismiagkov.walletservice.init.DatabaseConnection;
 import com.denismiagkov.walletservice.repository.interfaces.OperationDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.*;
@@ -14,6 +15,7 @@ import java.util.*;
  * Класс отвечает за доступ к данным о действиях игроков в приложении, хранящимся в базе данных. Предоставляет методы
  * для создания, чтения, обновления и удаления данных.
  */
+@Repository
 public class OperationDAOImpl implements OperationDAO {
 
     /**

@@ -1,5 +1,8 @@
 package com.denismiagkov.walletservice.infrastructure.login_service;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class JwtRequest {
     private String login;
     private String password;

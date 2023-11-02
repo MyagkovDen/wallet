@@ -1,16 +1,20 @@
 package com.denismiagkov.walletservice.init;
 
 import com.denismiagkov.walletservice.init.PropertyFile;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+@Component
 public class DatabaseConnection {
     private final String URL;
     private final String USERNAME;
     private final String PASSWORD;
 
+    @Autowired
     public DatabaseConnection() {
         this.URL = PropertyFile.getProperties("URL");
         this.USERNAME = PropertyFile.getProperties("USER_NAME");

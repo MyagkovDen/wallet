@@ -1,5 +1,4 @@
 package com.denismiagkov.walletservice.configuration;
-import javax.servlet.ServletException;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -12,11 +11,15 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
+
+        System.out.println("ENTERED INTO CLASS");
         return new Class[]{Config.class};
     }
 
     @Override
     protected String[] getServletMappings() {
+
+        System.out.println("ENTERED INTO PROGRAM");
         return new String[]{"/"};
     }
 }

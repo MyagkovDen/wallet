@@ -1,11 +1,14 @@
 package com.denismiagkov.walletservice.init;
 
+import org.springframework.stereotype.Component;
+
 import java.io.*;
 import java.util.Properties;
 
 /**
  * Класс описывает конфигурационный файл, включая путь и способ извлечения данных.
  */
+@Component
 public class PropertyFile {
 
     private static final Properties PROPERTIES = new Properties();

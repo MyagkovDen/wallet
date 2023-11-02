@@ -3,14 +3,17 @@ package com.denismiagkov.walletservice.infrastructure.login_service;
 import com.denismiagkov.walletservice.application.service.Service;
 import com.denismiagkov.walletservice.domain.model.Entry;
 import io.jsonwebtoken.Claims;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.servlet.http.HttpServletRequest;
 
-
+@org.springframework.stereotype.Service
 public class AuthService {
 
     private final Service service;
     private final JwtProvider jwtProvider;
 
+    @Autowired
     public AuthService() {
         this.service = new Service();
         this.jwtProvider = new JwtProvider();

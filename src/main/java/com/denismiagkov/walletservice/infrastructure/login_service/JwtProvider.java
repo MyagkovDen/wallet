@@ -6,6 +6,8 @@ import com.denismiagkov.walletservice.domain.model.Entry;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.security.Key;
@@ -14,12 +16,14 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
+@Component
 public class JwtProvider {
 
     private final SecretKey JWT_ACCESS_SECRET_KEY;
     private final SecretKey JWT_REFRESH_SECRET_KEY;
     private Service service;
 
+    @Autowired
     public JwtProvider() {
         String valueOfJwtAccessSecretKey = PropertyFile.getProperties("JWT_ACCESS_SECRET_KEY");
         String valueOfJwtRefreshSecretKey = PropertyFile.getProperties("JWT_REFRESH_SECRET_KEY");

@@ -7,6 +7,7 @@ import com.denismiagkov.walletservice.domain.model.TransactionType;
 import com.denismiagkov.walletservice.init.DatabaseConnection;
 import com.denismiagkov.walletservice.repository.interfaces.AccountDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.sql.*;
@@ -17,6 +18,7 @@ import java.util.List;
  * Класс отвечает за доступ к данным о счетах игроков, хранящимся в базе данных. Предоставляет методы для создания,
  * чтения, обновления и удаления сведений в базе данных.
  */
+@Repository
 public class AccountDAOImpl implements AccountDAO {
 
     /**

@@ -15,7 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
+//import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -51,7 +51,7 @@ public class Controller {
     /**
      * Init-метод создает подключение к базе данных и запускает Liquibase
      */
-    @PostConstruct
+   // @PostConstruct
     public void init() {
         WebInit.start();
     }

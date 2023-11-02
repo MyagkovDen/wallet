@@ -15,18 +15,22 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <junit.api.version>5.9.2</junit.api.version>
         <assertj.core>3.24.2</assertj.core>
         <mockito>5.6.0</mockito>
-        <spring.webmvc.version>5.3.30</spring.webmvc.version>
+
+        <spring.webmvc.version>6.0.13</spring.webmvc.version>
+        <c3p0.version>0.9.5.2</c3p0.version>
+
         <postgresql.version>42.6.0</postgresql.version>
         <liquibase.version>4.24.0</liquibase.version>
         <testcontainers.version>1.19.1</testcontainers.version>
         <junit.version>1.19.1</junit.version>
         <postgresql.test.version>1.19.1</postgresql.test.version>
-        <javax.servlet.api>4.0.1</javax.servlet.api>
+        <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
+        <jakarta.servlet.jsp.jstl.version>3.0.0</jakarta.servlet.jsp.jstl.version>
         <jakarta.validation>3.0.2</jakarta.validation>
         <jackson.databind.version>2.15.2</jackson.databind.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
@@ -40,11 +44,22 @@
         <maven.war.plugin>3.2.3</maven.war.plugin>
         <aspectj.maven.plugin>1.14.0</aspectj.maven.plugin>
         <junit.jupiter.params.version>5.10.0</junit.jupiter.params.version>
+        <springfox.version>2.9.2</springfox.version>
 
 
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -58,13 +73,24 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.webmvc.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${javax.servlet.api}</version>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>${c3p0.version}</version>
+        </dependency>
+        <!--  https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api  -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>${jakarta.servlet.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+<!--        <dependency>-->
+<!--            <groupId>jakarta.servlet.jsp.jstl</groupId>-->
+<!--            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>-->
+<!--            <version>${jakarta.servlet.jsp.jstl.version}</version>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
         <dependency>
             <groupId>jakarta.validation</groupId>

@@ -1,5 +1,5 @@
 package com.denismiagkov.walletservice.configuration;
-import jakarta.servlet.ServletException;
+import javax.servlet.ServletException;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
